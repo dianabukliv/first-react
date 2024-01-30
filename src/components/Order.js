@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { FaTrash } from 'react-icons/fa'
+import '../style/order.css'
+
 export default class Order extends Component {
   render() {
     const {

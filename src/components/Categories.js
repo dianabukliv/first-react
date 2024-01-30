@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../style/categories.css'
 
 export default class Categories extends Component {
     constructor(props) {

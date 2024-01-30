@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header'
+import '../style/contact.css'
 
 export default class Contact extends Component {
   render() {

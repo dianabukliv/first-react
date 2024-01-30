@@ -3,7 +3,7 @@ import {Navbar, Nav } from "react-bootstrap";
 import '../index.css';
 import { FaShoppingCart } from "react-icons/fa";
 import Order from './Order';
-
+import '../style/header.css';
 
 const showOrders = (props) => {
   let summa = 0
