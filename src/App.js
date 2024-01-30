@@ -1,10 +1,13 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Items from "./components/Items";
 import './index.css';
 import Categories from "./components/Categories";
 import ShowFullItem from "./components/ShowFullItem";
+import AboutUs from './components/AboutUs';
+import Contact from './components/Contact';
 
 
 
@@ -21,7 +24,7 @@ class App extends React.Component {
           img:'tov1.jpg',
           desc: '«Дортмунд» — це той виріб, до якого хочеться повертатись після роботи, роздивлятись, милуватись і кожен раз бачити в ньому щось нове та унікальне.',
           category: 'Світлі дивани',
-          price: '33 282 грн'
+          price: '33282 грн'
         },
         {
           id: 2,
@@ -124,11 +127,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-        <Categories chooseCategory={this.chooseCategory}/>
-        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
-
-        {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} />}
+        <Router>
+          <Routes>
+            <Route path="/" element={<>
+              <Header orders={this.state.orders} onDelete={this.deleteOrder} />
+              <div className='presentation'></div>
+              <Categories chooseCategory={this.chooseCategory}/>
+              <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
+              {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} /> }
+            </>
+            } />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Router>
         <Footer />
       </div>
     );
@@ -144,6 +156,7 @@ class App extends React.Component {
     if (category === 'all') {
       this.setState({ currentItems: this.state.items })
       return
+      
     }
     this.setState({
       currentItems: this.state.items.filter(el => el.category === category)
@@ -154,12 +167,8 @@ class App extends React.Component {
     this.setState({ orders: this.state.orders.filter(el => el.id !== id) })
   }
 
-  addToOrder(item) {
-    let isInArray = false
-    this.state.orders.forEach(el => {
-      if(el.id === item.id)
-        isInArray = true
-    })
+  addToOrder(item) { 
+    const isInArray = this.state.orders.some((el) => el.id === item.id);
     if(!isInArray)
     this.setState({ orders: [...this.state.orders, item] })
   }

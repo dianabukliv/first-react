@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
-import '../index.css'
+import React, { useState } from 'react';
+import {Navbar, Nav } from "react-bootstrap";
+import '../index.css';
 import { FaShoppingCart } from "react-icons/fa";
 import Order from './Order';
+
 
 const showOrders = (props) => {
   let summa = 0
@@ -25,17 +27,18 @@ export default function Header(props) {
 
   return (
    <header>
-            <span className='logo'> House Staff </span>
+    <a href="/" className='li'>
+      <span className='logo'> House Staff </span>
+    </a>  
       <div>
-      <ul className="nav">
-        <li>
-         Про нас
-        </li>
-        <li>
-          Контакти
-        </li>
-      </ul>
-            <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-curt-button ${cartOpen && 'active'}`}/>
+        <Navbar collapseOnSelect expand="md" >
+        <Nav className="nav li">
+          <Nav.Link href="/about" className='li' >Про нас</Nav.Link>
+          <Nav.Link href="/contact" className='li' >Контакти</Nav.Link>
+        </Nav>
+        </Navbar>
+
+          <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-curt-button ${cartOpen && 'active'}`}/>
             {cartOpen && (
               <div className='shop-cart'>
                   {props.orders.length > 0 ? 
@@ -43,9 +46,7 @@ export default function Header(props) {
               </div>
             )}
         </div>
-        <div className='presentation'>
-        
-        </div>
+
    </header>
   )
 }

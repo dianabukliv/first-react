@@ -2,13 +2,17 @@ import React, { Component } from 'react'
 import { FaTrash } from 'react-icons/fa'
 export default class Order extends Component {
   render() {
+    const {
+      item: {img, title, price, id},
+      onDelete
+    } = this.props
     return (
       <div className='item'>
-        <img src={"/img/" + this.props.item.img} />
-        <h2>{this.props.item.title}</h2>
-        <b>{this.props.item.price}</b>
-        <FaTrash className='delete-icon' onClick={() => this.props.onDelete(this.props.item.id)} />
+        <img src={"/img/" + img} />
+        <h2>{title}</h2>
+        <b>{price}</b>
+        <FaTrash className='delete-icon' onClick={() => onDelete(id)} />
       </div>
-    )
+    ) 
   }
 }

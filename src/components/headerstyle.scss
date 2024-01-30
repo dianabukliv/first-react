@@ -1,0 +1,101 @@
+header {
+    position: relative;
+  
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+  
+    .nav {
+      float: right;
+      list-style: none;
+  
+      .li {
+        display: inline;
+        text-decoration: none;
+        color: black;
+        margin-left: 25px;
+        cursor: pointer;
+        transition: opacity 500ms;
+  
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  
+    .shop-curt-button {
+      float: right;
+      cursor: pointer;
+      transition: color, transform 500ms ease;
+  
+      &:hover,
+      &.active {
+        color: #dc3d3d;
+        transform: scale(1.5);
+      }
+    }
+  
+    .shop-cart {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      width: 450px;
+      background: #fafafa;
+      box-shadow: 4px 5px 15px -7px #606060;
+      z-index: 1000;
+      padding: 20px 20px 0;
+  
+      .empty {
+        h2 {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+      }
+  
+      .item {
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+  
+        img {
+          width: 70px;
+          float: left;
+          margin-right: 20px;
+        }
+  
+        h2 {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+  
+        p {
+          color: #797979;
+          font-weight: 600;
+        }
+  
+        .delete-icon {
+          color: #ca5252;
+          float: right;
+          position: relative;
+          top: -25px;
+          cursor: pointer;
+          transition: color, transform 500ms ease;
+  
+          &:hover {
+            color: #dc3d3d;
+            transform: scale(1.5);
+          }
+        }
+      }
+  
+      .summa {
+        float: left;
+        width: 100%;
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  
