@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/onOrder.css';
 import Order from './Order';
 
-const OnOrder = ({ isOpen, onClose}) => { 
+const OnOrder = ({ isOpen, onClose, order, handleDelete }) => { // Receive handleDelete as a prop
 
     return (
         <>  
@@ -11,7 +11,7 @@ const OnOrder = ({ isOpen, onClose}) => {
                     <div className='modal-wrapper'>
                         <div className='modal-content'>
                             <button className='modal-close-button' onClick={onClose}>Button</button> 
-
+                            <div item={Order} onDelete={handleDelete} />
                         </div>
                     </div>
                 </div>
@@ -20,5 +20,6 @@ const OnOrder = ({ isOpen, onClose}) => {
     );
 }
 
-export default OnOrder; 
+export default OnOrder;
+
 
