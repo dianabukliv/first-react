@@ -28,8 +28,10 @@ const ShowOrders = (props) => {
       <p className='summa'>Сума: {summa} грн</p>
       <button className='button_order' onClick={() => setModalInfoOpen(true)}>Оформити замовлення</button>
       <OnOrder
-        isOpen={modalInfoIsOpen}
-        onClose={() => setModalInfoOpen(false)}
+          isOpen={modalInfoIsOpen}
+          onClose={() => setModalInfoOpen(false)}
+          orders={props.orders} 
+          handleDelete={props.onDelete} 
       />
     </div>
   );
