@@ -83,8 +83,8 @@ header .shop-cart .item .delete-icon {
     float: right;
     position: relative;
     top: -25px;
-    cursor: pointer;
-    transition: color, transform 500ms ease;
+    cursor: pointer; 
+   transition: color, transform 500ms ease;
 }
 
 header .shop-cart .item .delete-icon:hover {
@@ -99,3 +99,24 @@ header .shop-cart .summa {
     font-size: 20px;
     margin-bottom: 20px;
 }
+
+.close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.modal_basket {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.button_order {
+    background-color: rgb(100, 174, 100);
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
