@@ -1,0 +1,43 @@
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+  }
+  .title_contact {
+    margin: 20px;
+  }
+  .left-content {
+    width: 45%; 
+  }
+  
+  .right-content {
+    width: 45%; 
+  }
+  
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form_input {
+    margin-bottom: 1rem; 
+    padding-top: 20px;
+  }
+  
+  .button_order {
+    margin-top: 1rem; 
+  }
+  
+  .icon{
+    margin-right: 10px;
+  }
+
+  ul, .mail, .adress {
+    list-style-type: none;
+    padding: 20px 10px;
+  }
+
+  h1 {
+    color: rgba(0, 0, 0, 0.829);
+  }

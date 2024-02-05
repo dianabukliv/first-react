@@ -1,0 +1,17 @@
+p {
+    margin: 10px;
+}
+
+span {
+    font-weight: 600;
+}
+
+li {
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.aboutUs{
+    font-weight: 600;
+    margin: 20px;
+}
